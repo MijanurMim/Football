@@ -16,15 +16,14 @@ body {
 
 /* header section start */
 .main-header {
+  display: flex;
+
   width: 100%;
   height: 677px;
-  /* margin-top: 0;
-  margin-left: 0; */
+
   background-color: #2d25a0;
 }
-.containers {
-  display: flex;
-}
+
 .header-left h1 {
   position: absolute;
   width: 485px;
@@ -37,7 +36,6 @@ body {
 }
 .header-left button {
   position: absolute;
-
   padding: 10px 24px;
   width: 168px;
   height: 44px;
@@ -45,14 +43,22 @@ body {
   color: white;
   background: #e02c6d;
 }
+.header-left:hover {
+  transform: scale(1.2);
+  transition: transform 0.5s ease-in-out;
+}
+
 .header-right img {
   position: absolute;
   width: 556.01px;
   height: 438px;
   margin: 153px 140px 86px 1082px;
-  /* transform: matrix(-1, 0, 0, 1, 0, 0); */
+  overflow: hidden;
 }
-
+.header-right img:hover {
+  transform: scale(1.5) rotateX(360deg);
+  transition: transform 1s ease-in-out;
+}
 /* header section ends */
 
 /* player section starts */
@@ -70,15 +76,20 @@ body {
   height: 474px;
   box-shadow: 0px 0px 40px rgba(0, 0, 0, 0.15);
   padding: 2px;
-  justify-content: center;
+
   align-items: center;
   margin-bottom: 30px;
+  overflow: hidden;
 }
 
 .player-cover img {
   width: 300px;
   height: 256px;
   margin: 15px;
+}
+.player-cover img:hover {
+  transform: scale(1.5);
+  transition: transform 0.75s ease-in-out;
 }
 
 .player-details {
@@ -87,4 +98,128 @@ body {
   margin: 15px;
 }
 
+.player-details h2 {
+  margin-left: -129px;
+}
+.players-section .player .player-details h2 {
+  color: #e02c6d;
+}
+.players-section .player .player-details p {
+  font-size: 15px;
+  color: gray;
+}
+
+/* sign up section
+ */
+
+.sign-up {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  height: 400px;
+  background-color: rgba(61, 186, 253, 0.247);
+
+  box-shadow: 0px 0px 40px rgba(53, 51, 51, 0.295);
+  margin: 80px;
+}
+.form h1 {
+  margin-top: 70px;
+  color: #e02c6d;
+}
+.form input {
+  margin: 20px 70px 20px 70px;
+  padding: 10px;
+  width: 300px;
+  border-style: none;
+}
+
+.form button {
+  margin: 20px 72px 72px 72px;
+  padding: 16px;
+  width: 323px;
+}
+.sign-up .form h1 {
+  font-size: 40px;
+}
+
+/* tournaments section starts  */
+.tournaments {
+  display: flex;
+  justify-content: center;
+  margin-top: 70px;
+  box-shadow: 0px 0px 40px rgba(0, 0, 0, 0.15);
+  transition: steps();
+}
+
+.leagues {
+  position: relative;
+}
+.league-cover img {
+  width: 372px;
+  margin: 15px;
+  height: 270px;
+}
+
+.leagues .league-details p,
+h2 {
+  display: flex;
+  justify-content: center;
+  width: 400px;
+  height: 150 px;
+  margin-left: 15px;
+}
 /* footer area styles */
+footer {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 0px;
+
+  height: 213px;
+  margin-top: 100px;
+}
+.footer-logo img {
+  display: flex;
+  justify-content: center;
+  width: 334.82px;
+  height: 87.42px;
+}
+.fab {
+  padding: 10px;
+  color: rgb(168, 167, 167);
+}
+
+/* media quaries starts */
+
+/* mobile devices */
+@media only screen and (max-width: 688px) {
+  .main-header .header-left {
+    width: 200px;
+  }
+  .players-section {
+    grid-template-columns: repeat(1, 330px);
+  }
+  .tournaments,
+  .main-header {
+    flex-direction: column;
+  }
+  .sign-up {
+    flex-direction: column;
+  }
+  .sign-up .form h1 {
+    margin-left: 46px;
+    font-size: 30px;
+  }
+}
+
+/* tablet devices */
+@media only screen and (min-width: 688px) and (max-width: 992px) {
+  .players-section {
+    grid-template-columns: repeat(2, 330px);
+  }
+  .tournaments {
+    flex-direction: column;
+  }
+}
